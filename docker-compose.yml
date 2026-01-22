@@ -21,11 +21,12 @@ services:
 
   airflow-init:
     build:
-      context: ./airflow
+      context: .
     container_name: seafood-landings-airflow-init
     depends_on:
       postgres:
         condition: service_healthy
+    env_file: .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${AIRFLOW_DB:-airflow}
@@ -55,13 +56,15 @@ services:
 
   airflow-webserver:
     build:
-      context: ./airflow
+#      context: ./airflow
+      context: .
     container_name: seafood-landings-airflow-webserver
     depends_on:
       postgres:
         condition: service_healthy
       airflow-init:
         condition: service_completed_successfully
+    env_file: .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${AIRFLOW_DB:-airflow}
@@ -84,13 +87,15 @@ services:
 
   airflow-scheduler:
     build:
-      context: ./airflow
+#      context: ./airflow
+      context: .
     container_name: seafood-landings-airflow-scheduler
     depends_on:
       postgres:
         condition: service_healthy
       airflow-init:
         condition: service_completed_successfully
+    env_file: .env
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${AIRFLOW_DB:-airflow}

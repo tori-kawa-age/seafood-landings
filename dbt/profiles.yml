@@ -1,11 +1,11 @@
 seafood_landings:
-  target: local
+  target: dev
   outputs:
 
-    local:
+    dev:
       type: postgres
-      host: "{{ env_var('LOCAL_POSTGRES_HOST', 'localhost') }}"
-      port: "{{ env_var('LOCAL_POSTGRES_PORT', '5435') | int }}"
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
       user: "{{ env_var('POSTGRES_USER') }}"
       password: "{{ env_var('POSTGRES_PASSWORD') }}"
       dbname: "{{ env_var('POSTGRES_DB') }}"
@@ -14,17 +14,3 @@ seafood_landings:
       connect_timeout: 10
       retries: 1
       keepalives_idle: 0
-
-    docker:
-      type: postgres
-      host: "{{ env_var('DOCKER_POSTGRES_HOST', 'postgres') }}"
-      port: "{{ env_var('DOCKER_POSTGRES_PORT', '5432') | int }}"
-      user: "{{ env_var('POSTGRES_USER') }}"
-      password: "{{ env_var('POSTGRES_PASSWORD') }}"
-      dbname: "{{ env_var('POSTGRES_DB') }}"
-      schema: analytics
-      threads: 4
-      connect_timeout: 10
-      retries: 1
-      keepalives_idle: 0
-
