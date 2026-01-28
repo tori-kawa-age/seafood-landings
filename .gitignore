@@ -1,2 +1,6 @@
 dbt-postgres-venv/
 .env
+data/
+*.xlsx
+*.csv
+
