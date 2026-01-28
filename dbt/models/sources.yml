@@ -13,3 +13,9 @@ sources:
     tables:
       - name: enforcement_raw
 
+  - name: sms
+    schema: sms
+    tables:
+      - name: sales_orders
+      - name: customers
+      - name: sales_order_lines

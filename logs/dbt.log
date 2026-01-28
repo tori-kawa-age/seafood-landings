@@ -378,3 +378,30 @@ Runtime Error
 [0m07:31:33.379012 [debug] [MainThread]: Command `dbt test` failed at 07:31:33.378924 after 0.06 seconds
 [0m07:31:33.379382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e92e4763280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e92e260a3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e92e260a2f0>]}
 [0m07:31:33.379718 [debug] [MainThread]: Flushing usage events
+[0m09:54:14.913956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b342c400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b21f7e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b21f7fd0>]}
+
+
+============================== 09:54:14.919325 | 65259185-9d4b-40e1-bc38-1540ae93a90b ==============================
+[0m09:54:14.919325 [info ] [MainThread]: Running with dbt=1.11.2
+[0m09:54:14.919853 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'use_colors': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'profiles_dir': '/home/ricardo/.dbt/', 'static_parser': 'True', 'debug': 'False', 'empty': 'False', 'log_path': 'logs', 'invocation_command': 'dbt run -m stg_sms_customers', 'printer_width': '80', 'log_format': 'default', 'quiet': 'False'}
+[0m09:54:14.920263 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of `--select` or
+`-s`.
+[0m09:54:14.920646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '65259185-9d4b-40e1-bc38-1540ae93a90b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b21f7fa0>]}
+[0m09:54:14.921179 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/ricardo/projects/seafood-landings/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:54:14.921744 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m09:54:14.923928 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07309008, "process_in_blocks": "51376", "process_kernel_time": 0.266546, "process_mem_max_rss": "93756", "process_out_blocks": "16", "process_user_time": 1.270016}
+[0m09:54:14.924558 [debug] [MainThread]: Command `dbt run` failed at 09:54:14.924343 after 0.07 seconds
+[0m09:54:14.924959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b342c400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b21f7c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e34b21f7fa0>]}
+[0m09:54:14.925389 [debug] [MainThread]: Flushing usage events
+[0m09:54:15.383767 [debug] [MainThread]: An error was encountered while trying to flush usage events

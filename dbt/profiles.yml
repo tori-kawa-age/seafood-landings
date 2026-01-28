@@ -5,11 +5,11 @@ seafood_landings:
     dev:
       type: postgres
       host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
-      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
+      port: "{{ env_var('POSTGRES_PORT', '5435') | int }}"
       user: "{{ env_var('POSTGRES_USER') }}"
       password: "{{ env_var('POSTGRES_PASSWORD') }}"
       dbname: "{{ env_var('POSTGRES_DB') }}"
-      schema: analytics
+      schema: sms
       threads: 4
       connect_timeout: 10
       retries: 1
